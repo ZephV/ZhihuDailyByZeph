@@ -1,16 +1,16 @@
 package com.zeph.zhihudailybyzeph.ui.activity;
 
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
-import com.astuetz.PagerSlidingTabStrip;
 import com.zeph.zhihudailybyzeph.R;
 import com.zeph.zhihudailybyzeph.adapter.PagerAdapter;
 
 public class MainActivity extends FragmentActivity {
 
   private ViewPager pager;
-  private PagerSlidingTabStrip tab;
+  private TabLayout tab;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -18,8 +18,8 @@ public class MainActivity extends FragmentActivity {
     setContentView(R.layout.activity_main);
 
     pager = (ViewPager) findViewById(R.id.pager);
-    tab= (PagerSlidingTabStrip) findViewById(R.id.tab);
+    tab = (TabLayout) findViewById(R.id.tab);
     pager.setAdapter(new PagerAdapter(getSupportFragmentManager()));
-    tab.setViewPager(pager);
+    tab.setupWithViewPager(pager);
   }
 }
